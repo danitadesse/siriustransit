@@ -3,6 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -24,59 +26,45 @@ body.loaded {
 }
 
 /* Header */
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
+header {
   width: 100%;
-  padding: 20px 100px;
-  background: rgba(255, 255, 255, 0.1);
+  height: 80px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, );
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 0px 100px;
+  position: absolute;
   z-index: 100;
 }
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-  transition: 0.5s;
+
+.logo{
+  font-size: 28px;
+  font-weight: bold;
+  color: #ddd;
 }
-.header:hover::before {
-  left: 100%;
-}
-.logo {
-  color: #fff;
-  font-size: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: default;
-}
-.navbar a {
-  color: #fff;
-  font-size: 18px;
-  text-decoration: none;
-  margin-left: 35px;
-  transition: 0.3s;
-}
-.navbar a:hover {
-  color: #1f6fa2;
-}
-#menu-icon {
-  font-size: 36px;
-  color: #fff;
+.hum{
   display: none;
+}
+
+.nav-bar ul{
+  display: flex;
+}
+
+.nav-bar ul a {
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 0 5px;
+}
+
+.nav-bar ul li a:hover{
+  color: #fff;
+  background-color: #2980b9;
 }
 /* Hero Section */
 .hero {
@@ -578,7 +566,7 @@ footer .wave#wave4{
   }
 
   .service-card {
-    width: 90%;
+    width: 100%;
   }
 
   /* Choose Us Section */
@@ -605,12 +593,6 @@ footer .wave#wave4{
 
   /* Footer Section */
   .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Header Section */
-  .header nav {
     flex-direction: column;
     align-items: center;
   }
@@ -731,12 +713,6 @@ footer .wave#wave4{
     align-items: center;
   }
 
-  /* Header Section */
-  .header nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
   /* Hero Section */
   .hero h1 {
     font-size: 2.5rem;
@@ -799,12 +775,6 @@ footer .wave#wave4{
     font-size: 0.85rem;
   }
 
-  /* Header Section */
-  .header nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
   /* Hero Section */
   .hero h1 {
     font-size: 2rem;
@@ -834,46 +804,7 @@ footer .wave#wave4{
   }
 }
 
-@media (max-width: 992px) {
-  .header {
-    padding: 1.25rem 4%;
-  }
-}
-@media (max-width: 768px) {
-  #menu-icon {
-    display: block;
-  }
-  .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 0.5rem 4%;
-    display: none;
-  }
-  .navbar.active {
-    display: block;
-  }
-  .navbar a {
-    display: block;
-    margin: 1.5rem 0;
-  }
-  .nav-bg {
-    position: absolute;
-    top: 79px;
-    left: 0;
-    width: 100%;
-    height: 295px;
-    background: rgba(255, 255, 255, 0.1);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    z-index: 99;
-    display: none;
-  }
-  .nav-bg.active {
-    display: block;
-  }
-}
+/* dfg */
 @media (max-width: 720px) {
   .services-container {
     flex-direction: column;
@@ -938,9 +869,56 @@ footer .wave#wave4{
     align-items: center;
   }
 }
+@media only screen and (max-width: 1320px) {
+  header{
+    padding: 0 50px;
+  }  
+}
+@media only screen and (max-width: 1100px) {
+  header{
+    padding: 0 30px;
+  }  
+}
 
+@media only screen and (max-width: 900px){
+  .hum{
+    display: block;
+    cursor: pointer;
+  }
+  .hum .line{
+    width: 30px;
+    height: 3px;
+    background: #1f6fa2;
+    margin: 6px 0;
+  }
 
+  .nav-bar{
+    height: 0;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: #132836;
+    transition: 0.2s;
+    overflow: hidden;
+  }
 
-
-
-
+  .nav-bar.active{
+    height: 250px;
+  }
+  .nav-bar.active ul{
+    opacity: 1;
+  }
+  .nav-bar ul{
+    display: block;
+    width: fit-content;
+    margin: 15px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+  }
+  .nav-bar ul lli a {
+    margin-bottom: 12px;
+  }
+}
